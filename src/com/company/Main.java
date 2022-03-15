@@ -1,33 +1,15 @@
 package com.company;
 import java.util.List;
-
+import java.util.HashMap;
 public class Main {
 
     public String calc(String inputString) {
         inputString = "1 2 3 4 5 6 7 8 9 0";
         String[] a = inputString.split(" ");
-        String operations = "+ - * /";
-        String [] op = operations.split(" ");
-
-
-
-        if (a.length != 3) {
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-                "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
-                "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
-                "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
-                "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
-                "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
-                "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
-        if (roman.contains(a[0]) && roman.contains(a[2]) && roman.add(op[1])) {
+        if (inputString.contains(a[0]) && inputString.contains(a[2]) && inputString.contains(a[1])) {
             int result = 0;
-            switch (operations) {
+            String revRes = "0";
+            switch (a[1]) {
                 case "+":
                     result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
                     break;
@@ -41,7 +23,50 @@ public class Main {
                     result = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                     break;
 
-            }return result;
+            }
+            return revRes = Integer.toString(result);
+            class RomanNumbers {
+                List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+                        "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
+                        "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
+                        "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
+                        "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
+                        "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
+                        "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
+            if(roman.contains(a[0])&&roman.contains(a[2])&&roman.contains(a[1]))
+                {
+                    HashMap<Integer, List<String>> romanNumber = new HashMap<>();
+                    romanNumber.put(1, roman);
+                    romanNumber.put(2, roman);
+                    romanNumber.put(3, roman);
+                    romanNumber.put(4, roman);
+                    romanNumber.put(5, roman);
+                    romanNumber.put(6, roman);
+                    romanNumber.put(7, roman);
+                    romanNumber.put(8, roman);
+                    romanNumber.put(9, roman);
+                    romanNumber.put(10, roman);
+
+                }
+            }
+          }
+            return inputString;
+        }
+    }
+
+
+
+
+
+
+
+            //        if (a.length != 3) {
+//            try {
+//                throw new Exception();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
 //        int result = 0;
 //        switch (a[1]) {
 //            case "+":
@@ -70,7 +95,7 @@ public class Main {
 //                            "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"};
 //                    String s = roman[numArabian];
 //                    return s;
-        }
+
 //
 //                int romanToNumber(String roman) {
 //                    if (roman.equals("I")) {
@@ -118,6 +143,4 @@ public class Main {
 //
 //        }
 
-        return inputString;
-    }
-}
+
