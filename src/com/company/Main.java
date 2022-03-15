@@ -8,9 +8,7 @@ public class Main {
         String[] a = inputString.split(" ");
         String operations = "+ - * /";
         String [] op = operations.split(" ");
-        int o = Integer.parseInt((op[1]))
-        int num1 = Integer.parseInt(a[0]);
-        int num2 = Integer.parseInt(a[2]);
+
 
 
         if (a.length != 3) {
