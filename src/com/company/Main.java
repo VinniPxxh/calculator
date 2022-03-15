@@ -28,7 +28,7 @@ public class Main {
             int result = 0;
             switch (op) {
                 case "+":
-                    result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
+                    result = num1 + num2;
                     break;
                 case '-':
                     result = num1 - num2;
