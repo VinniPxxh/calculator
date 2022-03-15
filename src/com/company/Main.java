@@ -4,8 +4,11 @@ import java.util.List;
 public class Main {
 
     public String calc(String inputString) {
+        inputString = "1 2 3 4 5 6 7 8 9 0";
         String[] a = inputString.split(" ");
-        int op = Integer.parseInt(a[1]);
+        String operations = "+ - * /";
+        String [] op = operations.split(" ");
+        int o = Integer.parseInt((op[1]))
         int num1 = Integer.parseInt(a[0]);
         int num2 = Integer.parseInt(a[2]);
 
@@ -24,20 +27,20 @@ public class Main {
                 "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
                 "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
                 "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
-        if (roman.contains(num1) && roman.contains(num2)) {
+        if (roman.contains(a[0]) && roman.contains(a[2]) && roman.add(op[1])) {
             int result = 0;
-            switch (op) {
+            switch (operations) {
                 case "+":
-                    result = num1 + num2;
+                    result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
                     break;
-                case '-':
-                    result = num1 - num2;
+                case "-":
+                    result = Integer.parseInt(a[0]) - Integer.parseInt(a[2]);
                     break;
-                case '*':
-                    result = num1 * num2;
+                case "*":
+                    result = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
                     break;
-                case '/':
-                    result = num1 / num2;
+                case "/":
+                    result = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                     break;
 
             }return result;
