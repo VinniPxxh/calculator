@@ -4,12 +4,17 @@ import java.util.HashMap;
 public class Main {
 
     public String calc(String inputString) {
+
         inputString = "1 2 3 4 5 6 7 8 9 0";
         String[] a = inputString.split(" ");
+
         if (inputString.contains(a[0]) && inputString.contains(a[2]) && inputString.contains(a[1])) {
+
             int result = 0;
             String revRes = "0";
+
             switch (a[1]) {
+
                 case "+":
                     result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
                     break;
@@ -23,9 +28,10 @@ public class Main {
                     result = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                     break;
 
-            }
-            return revRes = Integer.toString(result);
+            }return revRes = Integer.toString(result);
+
             class RomanNumbers {
+
                 List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
                         "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
                         "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
@@ -33,8 +39,9 @@ public class Main {
                         "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
                         "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
                         "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
-            if(roman.contains(a[0])&&roman.contains(a[2])&&roman.contains(a[1]))
-                {
+
+            if(roman.contains(a[0]) && roman.contains(a[2])){
+
                     HashMap<Integer, List<String>> romanNumber = new HashMap<>();
                     romanNumber.put(1, roman);
                     romanNumber.put(2, roman);
@@ -46,7 +53,6 @@ public class Main {
                     romanNumber.put(8, roman);
                     romanNumber.put(9, roman);
                     romanNumber.put(10, roman);
-
                 }
             }
           }
