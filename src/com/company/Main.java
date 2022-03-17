@@ -25,16 +25,18 @@ public class Main {
         System.out.println(inputString);
         String[] a = inputString.split(" ");
 
+        int arab1 = 0;
+        int arab2 = 0;
 
         if (roman.contains(a[0]) && roman.contains(a[2])) {
             for (int i = 0; i < 10; i++){
                 if (a[0].equals(roman.get(i))){
-                    int arab1 = i;
+                     arab1 = i;
                 }
             }
             for (int i = 0; i < 10; i++){
                 if (a[2].equals(roman.get(i))){
-                    int arab2 = i;
+                    arab2 = i;
                 }
             }
             int result = 0;
@@ -46,13 +48,13 @@ public class Main {
                     result = arab1 + arab2;
                     break;
                 case "-":
-                    result = Integer.parseInt(a[0] - Integer.parseInt(a[2]);
+                    result = arab1 - arab2;
                     break;
                 case "*":
-                    result = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
+                    result = arab1 * arab2;
                     break;
                 case "/":
-                    result = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
+                    result = arab1 / arab2;
                     break;
 
             }
