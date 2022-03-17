@@ -11,6 +11,8 @@ public class Main {
             "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
             "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
     List<Integer> arab = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    int arab1 = 0;
+    int arab2 = 0;
 
     /*      Порядок действий:
     1.Проверка листа на римские
@@ -21,29 +23,23 @@ public class Main {
     6.Если проверка не проходит, то выкинуть ошибку
      */
     public String calc(String inputString) {
-        System.out.println(inputString);
-
-        System.out.println(inputString);
         String[] a = inputString.split(" ");
 
-        int arab1 = 0;
-        int arab2 = 0;
-
-        if (roman.contains(a[0]) && roman.contains(a[2])) {
-            for (int i = 0; i < 10; i++) {
-                if (a[0].equals(roman.get(i))) {
-                    arab1 = i;
+        if (roman.contains(a[0]) && roman.contains(a[2])) { // Проверка на римские
+            for (int i = 1; i < 10; i++) {                  //
+                if (a[0].equals(roman.get(i))) {            //Перевод из римских в арабские(Первое число)
+                    arab1 = i;                              //
                 }
             }
-            for (int i = 0; i < 10; i++) {
-                if (a[2].equals(roman.get(i))) {
-                    arab2 = i;
+            for (int i = 1; i < 10; i++) {                  //
+                if (a[2].equals(roman.get(i))) {            //Перевод из римских в арабские(Второе число)
+                    arab2 = i;                              //
                 }
             }
             int result = 0;
 
 
-            switch (a[1]) {
+            switch (a[1]) {   //Проверка знаков
 
                 case "+":
                     result = arab1 + arab2;
@@ -62,15 +58,15 @@ public class Main {
 
             return "" + result;
         }
-            if (arab.contains(a[0]) && arab.contains(a[2])) {
+            if (arab.contains(a[0]) && arab.contains(a[2])) {   //Проверка на арабские
                 int arabResult = 0;
-                switch (a[1]){
+                switch (a[1]){   //Проверка знаков
                     case "+":
                         arabResult = arab1 + arab2;
                         break;
                     case "-":
                         arabResult = arab1 - arab2;
-                        break;;
+                        break;
                     case  "*":
                         arabResult = arab1 * arab2;
                         break;
@@ -82,10 +78,10 @@ public class Main {
 
 
 
+            }else{
+                throw new RuntimeException("Одно из условий было не выполнено! Подавайте либо арабские, либо римские числа.");
             }
-
-
-        return inputString;
+            return inputString;
     }
 }
 
