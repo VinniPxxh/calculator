@@ -64,7 +64,7 @@ public class Main {
             if(result < 1){
                 throw new RuntimeException("Результатом вычислений римских чисел могут быть только положительные числа!");
             }
-            return "" + result;
+            return "" +roman.get(result);
 
         }
         if (arab.contains(a[0]) && arab.contains(a[2])) {   //Проверка на арабские
