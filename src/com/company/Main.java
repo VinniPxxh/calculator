@@ -1,25 +1,53 @@
 package com.company;
+
 import java.util.List;
-import java.util.HashMap;
+
 public class Main {
-
+    List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+            "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
+            "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
+            "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
+            "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
+            "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
+            "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
+    List<Integer> arab = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+/*      Порядок действий:
+1.Проверка листа на римские
+2.Перевод римских в арабские
+3.Проверка на знаки
+4.Если проверки не проходят, то выкинуть ошибку
+5.Проверка листа на арабские
+6.Проверка на знаки
+7.Если проверка не проходит, то выкинуть ошибку
+ */
     public String calc(String inputString) {
+        System.out.println(inputString);
 
-        inputString = "1 2 3 4 5 6 7 8 9 0";
+        System.out.println(inputString);
         String[] a = inputString.split(" ");
 
-        if (inputString.contains(a[0]) && inputString.contains(a[2]) && inputString.contains(a[1])) {
 
+        if (roman.contains(a[0]) && roman.contains(a[2])) {
+            for (int i = 0; i < 10; i++){
+                if (a[0].equals(roman.get(i))){
+                    int arab1 = i;
+                }
+            }
+            for (int i = 0; i < 10; i++){
+                if (a[2].equals(roman.get(i))){
+                    int arab2 = i;
+                }
+            }
             int result = 0;
-            String revRes = "0";
+
 
             switch (a[1]) {
 
                 case "+":
-                    result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
+                    result = arab1 + arab2;
                     break;
                 case "-":
-                    result = Integer.parseInt(a[0]) - Integer.parseInt(a[2]);
+                    result = Integer.parseInt(a[0] - Integer.parseInt(a[2]);
                     break;
                 case "*":
                     result = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
@@ -28,125 +56,15 @@ public class Main {
                     result = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                     break;
 
-            }return revRes = Integer.toString(result);
-
-            class RomanNumbers {
-
-                List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-                        "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
-                        "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
-                        "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
-                        "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
-                        "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
-                        "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
-
-            if(roman.contains(a[0]) && roman.contains(a[2])){
-
-                    HashMap<Integer, List<String>> romanNumber = new HashMap<>();
-                    romanNumber.put(1, roman);
-                    romanNumber.put(2, roman);
-                    romanNumber.put(3, roman);
-                    romanNumber.put(4, roman);
-                    romanNumber.put(5, roman);
-                    romanNumber.put(6, roman);
-                    romanNumber.put(7, roman);
-                    romanNumber.put(8, roman);
-                    romanNumber.put(9, roman);
-                    romanNumber.put(10, roman);
-                }
             }
-          }
-            return inputString;
+
+            return "" + result;
+
         }
+        return inputString;
     }
+}
 
 
-
-
-
-
-
-            //        if (a.length != 3) {
-//            try {
-//                throw new Exception();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        int result = 0;
-//        switch (a[1]) {
-//            case "+":
-//                result = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
-//                return result;
-//
-////                case '-':
-////                    result = num1 - num2;
-////                    break;
-////                case '*':
-////                    result = num1 * num2;
-////                    break;
-////                case '/':
-////                    result = num1 / num2;
-////                    break;
-//
-//            class CalculatroHeper {
-//                String convertNumToRoman(int numArabian){
-//
-//                    List<String> roman = new list.of{"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-//                            "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
-//                            "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
-//                            "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
-//                            "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
-//                            "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
-//                            "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"};
-//                    String s = roman[numArabian];
-//                    return s;
-
-//
-//                int romanToNumber(String roman) {
-//                    if (roman.equals("I")) {
-//                        return 1;
-//                    } else if (roman.equals("II")) {
-//                        return 2;
-//                    } else if (roman.equals("III")) {
-//                        return 3;
-//                    } else if (roman.equals("IV")) {
-//                        return 4;
-//                    } else if (roman.equals("V")) {
-//                        return 5;
-//                    } else if (roman.equals("VI")) {
-//                        return 6;
-//                    } else if (roman.equals("VII")) {
-//                        return 7;
-//                    } else if (roman.equals("VIII")) {
-//                        return 8;
-//                    } else if (roman.equals("IX")) {
-//                        return 9;
-//                    } else if (roman.equals("X")) {
-//                        return 10;
-//                    }
-//                    return 0;
-//                }
-//            }
-//
-//            for (int i = 1; i <= 10; i++){
-//                num1 = i;
-//                for (int j = 1; j <= 10; j++){
-//                    num2 = j;
-//                    if(num1+num2>0){
-//                        result = inputString[i] + inputString[j];
-//                    }else if(num1 - num2 > 0){
-//                        result = inputString[i] - inputString[j];
-//                    }else if(num1 / num2 > 0){
-//                        result = inputString[i] / inputString[j];
-//                    }if (num1 * num2 > 0){
-//                        result = inputString[i] * inputString[j];
-//                    }
-//
-//                }return inputString;
-//
-//            }
-//
-//        }
 
 
