@@ -10,7 +10,7 @@ public class Main {
             "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
             "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
             "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
-    List<Integer> arab = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<String> arab = List.of("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
     int arab1 = 0;
     int arab2 = 0;
 
@@ -62,16 +62,16 @@ public class Main {
                 int arabResult = 0;
                 switch (a[1]){   //Проверка знаков
                     case "+":
-                        arabResult = arab1 + arab2;
+                        arabResult = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
                         break;
                     case "-":
-                        arabResult = arab1 - arab2;
+                        arabResult = Integer.parseInt(a[0]) - Integer.parseInt(a[2]);
                         break;
                     case  "*":
-                        arabResult = arab1 * arab2;
+                        arabResult = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
                         break;
                     case  "/":
-                        arabResult = arab1 / arab2;
+                        arabResult = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                         break;
                 }
                 return "" +arabResult;
@@ -81,7 +81,7 @@ public class Main {
             }else{
                 throw new RuntimeException("Одно из условий было не выполнено! Подавайте либо арабские, либо римские числа.");
             }
-            return inputString;
+
     }
 }
 
