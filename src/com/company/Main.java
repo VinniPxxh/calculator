@@ -11,14 +11,15 @@ public class Main {
             "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
             "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C");
     List<Integer> arab = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-/*      Порядок действий:
-1.Проверка листа на римские
-2.Перевод римских в арабские
-3.Проверка на знаки
-4.Проверка листа на арабские
-5.Проверка на знаки
-6.Если проверка не проходит, то выкинуть ошибку
- */
+
+    /*      Порядок действий:
+    1.Проверка листа на римские
+    2.Перевод римских в арабские
+    3.Проверка на знаки
+    4.Проверка листа на арабские
+    5.Проверка на знаки
+    6.Если проверка не проходит, то выкинуть ошибку
+     */
     public String calc(String inputString) {
         System.out.println(inputString);
 
@@ -29,13 +30,13 @@ public class Main {
         int arab2 = 0;
 
         if (roman.contains(a[0]) && roman.contains(a[2])) {
-            for (int i = 0; i < 10; i++){
-                if (a[0].equals(roman.get(i))){
-                     arab1 = i;
+            for (int i = 0; i < 10; i++) {
+                if (a[0].equals(roman.get(i))) {
+                    arab1 = i;
                 }
             }
-            for (int i = 0; i < 10; i++){
-                if (a[2].equals(roman.get(i))){
+            for (int i = 0; i < 10; i++) {
+                if (a[2].equals(roman.get(i))) {
                     arab2 = i;
                 }
             }
@@ -60,8 +61,30 @@ public class Main {
             }
 
             return "" + result;
-
         }
+            if (arab.contains(a[0]) && arab.contains(a[2])) {
+                int arabResult = 0;
+                switch (a[1]){
+                    case "+":
+                        arabResult = arab1 + arab2;
+                        break;
+                    case "-":
+                        arabResult = arab1 - arab2;
+                        break;;
+                    case  "*":
+                        arabResult = arab1 * arab2;
+                        break;
+                    case  "/":
+                        arabResult = arab1 / arab2;
+                        break;
+                }
+                return "" +arabResult;
+
+
+
+            }
+
+
         return inputString;
     }
 }
