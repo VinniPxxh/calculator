@@ -3,7 +3,7 @@ package com.company;
 import java.util.List;
 
 public class Main {
-    List<String> roman = List.of("O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+    List<String> roman = List.of("N", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
             "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
             "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
             "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
@@ -23,7 +23,12 @@ public class Main {
     6.Если проверка не проходит, то выкинуть ошибку
      */
     public String calc(String inputString) {
+
         String[] a = inputString.split(" ");
+
+        if (a.length != 3) {
+            throw new RuntimeException("Одно из условий было не выполнено!Введите символы от 1 до 10");
+        }
 
         if (roman.contains(a[0]) && roman.contains(a[2])) { // Проверка на римские
             for (int i = 1; i < 10; i++) {                  //
@@ -36,8 +41,8 @@ public class Main {
                     arab2 = i;                              //
                 }
             }
-            int result = 0;
 
+            int result = 0;
 
             switch (a[1]) {   //Проверка знаков
 
@@ -56,32 +61,35 @@ public class Main {
 
             }
 
-            return "" + result;
-        }
-            if (arab.contains(a[0]) && arab.contains(a[2])) {   //Проверка на арабские
-                int arabResult = 0;
-                switch (a[1]){   //Проверка знаков
-                    case "+":
-                        arabResult = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
-                        break;
-                    case "-":
-                        arabResult = Integer.parseInt(a[0]) - Integer.parseInt(a[2]);
-                        break;
-                    case  "*":
-                        arabResult = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
-                        break;
-                    case  "/":
-                        arabResult = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
-                        break;
-                }
-                return "" +arabResult;
-
-
-
-            }else{
-                throw new RuntimeException("Одно из условий было не выполнено! Подавайте либо арабские, либо римские числа.");
+            if(result < 1){
+                throw new RuntimeException("Результатом вычислений римских чисел могут быть только положительные числа!");
             }
+            return "" + result;
 
+        }
+        if (arab.contains(a[0]) && arab.contains(a[2])) {   //Проверка на арабские
+            int arabResult = 0;
+            switch (a[1]) {   //Проверка знаков
+                case "+":
+                    arabResult = Integer.parseInt(a[0]) + Integer.parseInt(a[2]);
+                    break;
+                case "-":
+                    arabResult = Integer.parseInt(a[0]) - Integer.parseInt(a[2]);
+                    break;
+                case "*":
+                    arabResult = Integer.parseInt(a[0]) * Integer.parseInt(a[2]);
+                    break;
+                case "/":
+                    arabResult = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
+                    break;
+            }
+            return "" + arabResult;
+
+
+        } else {
+            throw new RuntimeException("Одно из условий было не выполнено! Подавайте либо арабские, либо римские числа.");
+
+        }
     }
 }
 
