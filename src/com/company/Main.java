@@ -58,13 +58,15 @@ public class Main {
                 case "/":
                     result = arab1 / arab2;
                     break;
+                default:
+                    throw new IllegalArgumentException("Не верный знак операции");
 
             }
 
             if(result < 1){
                 throw new RuntimeException("Результатом вычислений римских чисел могут быть только положительные числа!");
             }
-            return "" +roman.get(result);
+            return roman.get(result);
 
         }
         if (arab.contains(a[0]) && arab.contains(a[2])) {   //Проверка на арабские
@@ -82,11 +84,15 @@ public class Main {
                 case "/":
                     arabResult = Integer.parseInt(a[0]) / Integer.parseInt(a[2]);
                     break;
+                default:
+                    throw new IllegalArgumentException("Не верный знак операции");
             }
+
             return "" + arabResult;
 
 
         } else {
+
             throw new RuntimeException("Одно из условий было не выполнено! Подавайте либо арабские, либо римские числа.");
 
         }
